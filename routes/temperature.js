@@ -10,6 +10,7 @@ router.use(function (req, res, next) {
  * @route POST /temperature
  * @group foo - Operations about user
  * @param {integer} temperature.query.required - register temperature 
+ * @param {string}  date.query.required - the record date
  * @returns {object} 201 - The registred temperature
  * @returns {object} 500 - Internal server error
  */
@@ -19,7 +20,7 @@ router.post('/', function (req, res) {
         .json({
             id: 1,
             temperature: req.query.temperature,
-            date: new date()
+            date: req.query.date
         });
 });
 
@@ -27,7 +28,6 @@ router.post('/', function (req, res) {
  * @route GET /temperature
  * @group foo - Operations about user
  * @param {integer} id.query.required - register temperature record id
- * @param {string}  date.query.required - register temperature record date
  * @returns {object} 201 - The temperature record
  * @returns {object} 500 - Internal server error
  */
@@ -37,7 +37,7 @@ router.get('/', function (req, res) {
         .json({
             id: req.query.id,
             temperature: 34,
-            date: req.query.date
+            date: new Date()
         });
 });
 

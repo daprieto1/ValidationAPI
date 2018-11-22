@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const expressSwagger = require('express-swagger-generator')(app);
 
-var basePath = '/v1';
+var basePath = '/v2';
 let options = {
     swaggerDefinition: {
         info: {
@@ -10,7 +10,7 @@ let options = {
             title: 'Swagger',
             version: '1.0.0',
         },
-        host: 'validationapi-v1.herokuapp.com',
+        host: 'validationapi-v2.herokuapp.com',
         basePath: basePath,
         produces: [
             "application/json"
