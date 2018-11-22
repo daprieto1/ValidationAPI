@@ -31,7 +31,10 @@ let options = {
 expressSwagger(options)
 
 var users = require('./routes/users');
+var temperature = require('./routes/temperature');
+
 app.use(`${basePath}/users`, users);
+app.use(`${basePath}/temperature`, temperature);
 
 app.listen(process.env.PORT || 3000, function () {
   console.log('Example app listening!');
