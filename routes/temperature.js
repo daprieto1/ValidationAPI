@@ -8,7 +8,7 @@ router.use(function (req, res, next) {
 
 /**
  * @route POST /temperature
- * @group foo - Operations about user
+ * @group temperature - Operations about user
  * @param {integer} temperature.query.required - register temperature 
  * @returns {object} 201 - The registred temperature
  * @returns {object} 500 - Internal server error
@@ -25,7 +25,7 @@ router.post('/', function (req, res) {
 
 /**
  * @route GET /temperature
- * @group foo - Operations about user
+ * @group temperature - Operations about user
  * @param {integer} id.query.required - register temperature record id
  * @param {string}  date.query.required - register temperature record date
  * @returns {object} 201 - The temperature record
