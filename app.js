@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const expressSwagger = require('express-swagger-generator')(app);
 
+var basePath = '/v1';
 let options = {
     swaggerDefinition: {
         info: {
@@ -10,7 +11,7 @@ let options = {
             version: '1.0.0',
         },
         host: 'validationapi-v1.herokuapp.com',
-        basePath: '/v1',
+        basePath: basePath,
         produces: [
             "application/json"
         ],
@@ -30,7 +31,7 @@ let options = {
 expressSwagger(options)
 
 var users = require('./routes/users');
-app.use('/users', users);
+app.use(`${basePath}/users`, users);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
