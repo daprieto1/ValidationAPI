@@ -17,4 +17,8 @@ router.put('/', function (req, res) {
     res.json({ message: 'hooray! welcome to our rest video api!' });
 });
 
+router.get('/', function (req, res) {
+    res.json({ message: 'hooray! welcome to our rest video api!' });
+});
+
 module.exports = router;

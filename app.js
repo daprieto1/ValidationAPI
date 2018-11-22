@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const expressSwagger = require('express-swagger-generator')(app);
 
+var basePath = '/v1';
 let options = {
     swaggerDefinition: {
         info: {
@@ -9,8 +10,8 @@ let options = {
             title: 'Swagger',
             version: '1.0.0',
         },
-        host: 'localhost:3000',
-        basePath: '/v1',
+        host: 'validationapi-v1.herokuapp.com',
+        basePath: basePath,
         produces: [
             "application/json"
         ],
@@ -30,8 +31,11 @@ let options = {
 expressSwagger(options)
 
 var users = require('./routes/users');
-app.use('/users', users);
+var temperature = require('./routes/temperature');
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.use(`${basePath}/users`, users);
+app.use(`${basePath}/temperature`, temperature);
+
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Example app listening!');
 });
