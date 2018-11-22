@@ -12,8 +12,7 @@ let options = {
         host: 'localhost:3000',
         basePath: '/v1',
         produces: [
-            "application/json",
-            "application/xml"
+            "application/json"
         ],
         schemes: ['http', 'https'],
         securityDefinitions: {
