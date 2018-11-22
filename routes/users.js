@@ -9,7 +9,7 @@ router.use(function (req, res, next) {
 /**
  * @route PUT /users
  * @group foo - Operations about user
- * @param {string} username.query.required - username 
+ * @param {string} name.query.required - name 
  * @returns {object} 200 - The updated user
  * @returns {object} 500 - Internal server error
  */
