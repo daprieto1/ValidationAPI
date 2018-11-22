@@ -10,11 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "swagger-ui-express": "^4.0.1"
-  },
-  "devDependencies": {
+    "swagger-ui-express": "^4.0.1",
     "express-swagger-generator": "^1.1.10"
-  },
+  },  
   "engines": {
     "node": "10.x"
   }
